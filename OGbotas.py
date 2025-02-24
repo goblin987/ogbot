@@ -37,9 +37,9 @@ def save_data(data, filename):
     except Exception as e:
         logger.error(f"Failed to save {filename}: {str(e)}")
 
-TOKEN = '7770681728:AAHfiSsbREtVz0t9oBH032nPaybnUcfbKb4'
-ADMIN_CHAT_ID = '6705617539'
-GROUP_CHAT_ID = '-1001381982408'
+TOKEN = os.getenv('TELEGRAM_TOKEN')
+ADMIN_CHAT_ID = os.getenv('ADMIN_CHAT_ID')
+GROUP_CHAT_ID = os.getenv('GROUP_CHAT_ID')
 TIMEZONE = pytz.timezone('Europe/Vilnius')
 COINFLIP_STICKER_ID = 'CAACAgIAAxkBAAEN32tnuPb-ovynJR5WNO1TQyv_ea17DwAC-RkAAtswEEqAzfrZRd8B1zYE'
 featured_media_id = load_data('featured_media_id.pkl', None)
